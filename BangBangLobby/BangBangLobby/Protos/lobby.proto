@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "LobbyService";
+
+service Lobby {
+  rpc FindMatch (MatchRequest) returns (MatchResponse);
+  rpc SelectTank (TankRequest) returns (TankResponse);
+}
+
+message MatchRequest {
+  string playerName = 1;
+}
+
+message MatchResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message TankRequest {
+  string playerName = 1;
+  string tankName = 2;
+}
+
+message TankResponse {
+  bool success = 1;
+  string message = 2;
+}
