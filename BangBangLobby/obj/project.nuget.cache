@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "WEocgwSaUrI=",
+  "dgSpecHash": "3UVWwyJMbzk=",
   "success": true,
-  "projectFilePath": "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\BangBangLobby\\BangBangLobby.csproj",
+  "projectFilePath": "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\BangBangLobby.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\toain\\.nuget\\packages\\google.protobuf\\3.27.0\\google.protobuf.3.27.0.nupkg.sha512",
+    "C:\\Users\\toain\\.nuget\\packages\\google.protobuf\\3.29.2\\google.protobuf.3.29.2.nupkg.sha512",
     "C:\\Users\\toain\\.nuget\\packages\\grpc.aspnetcore\\2.67.0\\grpc.aspnetcore.2.67.0.nupkg.sha512",
     "C:\\Users\\toain\\.nuget\\packages\\grpc.aspnetcore.server\\2.67.0\\grpc.aspnetcore.server.2.67.0.nupkg.sha512",
     "C:\\Users\\toain\\.nuget\\packages\\grpc.aspnetcore.server.clientfactory\\2.67.0\\grpc.aspnetcore.server.clientfactory.2.67.0.nupkg.sha512",

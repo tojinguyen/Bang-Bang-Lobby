@@ -1,17 +1,27 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
-var builder = WebApplication.CreateBuilder(args);
+namespace BangBangLobby
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
 
-// Đăng ký dịch vụ gRPC
-builder.Services.AddGrpc();
-
-var app = builder.Build();
-
-// Định nghĩa endpoint cho gRPC
-app.MapGrpcService<LobbyServiceImpl>();
-
-// Endpoint test (RESTful)
-app.MapGet("/bang-bang-lobby", () => "Server gRPC đang chạy. Hãy dùng gRPC client để kết nối.");
-
-app.Run();
+        private static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.ConfigureKestrel(serverOptions =>
+                        {
+                            serverOptions.ListenLocalhost(5000, listenOptions =>
+                            {
+                                listenOptions.UseHttps();  // Nếu muốn sử dụng HTTPS
+                            });
+                        })
+                        .UseStartup<Startup>();  // Chỉ định lớp Startup
+                });
+    }
+}

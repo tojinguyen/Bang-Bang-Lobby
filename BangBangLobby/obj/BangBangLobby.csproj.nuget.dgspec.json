@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\BangBangLobby\\BangBangLobby.csproj": {}
+    "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\BangBangLobby.csproj": {}
   },
   "projects": {
-    "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\BangBangLobby\\BangBangLobby.csproj": {
+    "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\BangBangLobby.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\BangBangLobby\\BangBangLobby.csproj",
+        "projectUniqueName": "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\BangBangLobby.csproj",
         "projectName": "BangBangLobby",
-        "projectPath": "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\BangBangLobby\\BangBangLobby.csproj",
+        "projectPath": "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\BangBangLobby.csproj",
         "packagesPath": "C:\\Users\\toain\\.nuget\\packages\\",
-        "outputPath": "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\BangBangLobby\\obj\\",
+        "outputPath": "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\toain\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.29.2, )"
+            },
             "Grpc.AspNetCore": {
               "target": "Package",
               "version": "[2.67.0, )"

@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "Google.Protobuf/3.27.0": {
+      "Google.Protobuf/3.29.2": {
         "type": "package",
         "compile": {
           "lib/net5.0/Google.Protobuf.dll": {
@@ -303,14 +303,14 @@
     }
   },
   "libraries": {
-    "Google.Protobuf/3.27.0": {
-      "sha512": "tEaKpc+SP7I3gYW9AHozESyKkrCg8Xe7huI3Q3iUt5t8Dn29r2k1u8jyrGrD16maj/0UsQBM0MDViWEj0iynOA==",
+    "Google.Protobuf/3.29.2": {
+      "sha512": "98gc5v6WTfvfo6nXXUFyXOwwfehUGVn4tIis3AnCZabur8t6Eq0lo4eloWEYpdxPH9MrhnbAzHcMwPCS8lCWoQ==",
       "type": "package",
-      "path": "google.protobuf/3.27.0",
+      "path": "google.protobuf/3.29.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "google.protobuf.3.27.0.nupkg.sha512",
+        "google.protobuf.3.29.2.nupkg.sha512",
         "google.protobuf.nuspec",
         "lib/net45/Google.Protobuf.dll",
         "lib/net45/Google.Protobuf.pdb",
@@ -790,6 +790,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Google.Protobuf >= 3.29.2",
       "Grpc.AspNetCore >= 2.67.0",
       "Grpc.AspNetCore.Server >= 2.67.0",
       "Grpc.Net.Client >= 2.67.0",
@@ -802,11 +803,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\BangBangLobby\\BangBangLobby.csproj",
+      "projectUniqueName": "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\BangBangLobby.csproj",
       "projectName": "BangBangLobby",
-      "projectPath": "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\BangBangLobby\\BangBangLobby.csproj",
+      "projectPath": "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\BangBangLobby.csproj",
       "packagesPath": "C:\\Users\\toain\\.nuget\\packages\\",
-      "outputPath": "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\BangBangLobby\\obj\\",
+      "outputPath": "D:\\GAME_DEV\\UNITY\\PROJECTS\\LEARNING\\Bang Bang\\Bang Bang Online Lobby\\Bang-Bang-Lobby\\BangBangLobby\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\toain\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -840,6 +841,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Google.Protobuf": {
+            "target": "Package",
+            "version": "[3.29.2, )"
+          },
           "Grpc.AspNetCore": {
             "target": "Package",
             "version": "[2.67.0, )"

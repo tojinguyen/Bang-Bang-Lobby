@@ -1,27 +1,55 @@
+using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
-using LobbyService;
 
-public class LobbyServiceImpl : Lobby.LobbyBase
+namespace BangBangLobby;
+
+public class LobbyServiceImpl : LobbyService.LobbyServiceBase
 {
-    private List<string> playersInLobby = new List<string>();
+    private readonly List<string> _players = [];
+    private const int MaxPlayers = 6;
+    private int _turn;
+    private readonly List<string> _playersPicking = [];
 
-    public override Task<MatchResponse> FindMatch(MatchRequest request, ServerCallContext context)
+    public override Task<JoinLobbyResponse> JoinLobby(JoinLobbyRequest request, ServerCallContext context)
     {
-        var response = new MatchResponse
+        if (_players.Count >= MaxPlayers)
         {
-            Success = playersInLobby.Count >= 2,
-            Message = playersInLobby.Count >= 2 ? "Match found" : "Waiting for players"
-        };
-        if (playersInLobby.Count < 2) playersInLobby.Add(request.PlayerName);
-        return Task.FromResult(response);
+            return Task.FromResult(new JoinLobbyResponse { Message = "Lobby is full" });
+        }
+
+        _players.Add(request.PlayerName);
+        return Task.FromResult(new JoinLobbyResponse { Message = "Joined lobby successfully" });
     }
 
-    public override Task<TankResponse> SelectTank(TankRequest request, ServerCallContext context)
+    public override Task<Empty> StartTankSelection(StartTankSelectionRequest request, ServerCallContext context)
     {
-        return Task.FromResult(new TankResponse
+        if (_players.Count < MaxPlayers)
         {
-            Success = true,
-            Message = $"{request.PlayerName} selected {request.TankName}"
-        });
+            return Task.FromResult(new Empty());
+        }
+
+        return (Task<Empty>)Task.CompletedTask;
+    }
+
+    public override Task<TankSelectionResponse> SelectTank(TankSelectionRequest request, ServerCallContext context)
+    {
+        var response = new TankSelectionResponse();
+        
+        if (_players[_turn] == request.PlayerId)
+        {
+            response.IsTurn = true;
+            response.Message = $"{request.PlayerId} has selected the {request.TankChoice} tank!";
+            _playersPicking.Add(request.PlayerId);
+            
+            _turn = (_turn + 1) % _players.Count;
+        }
+        else
+        {
+            response.IsTurn = false;
+            response.Message = "It's not your turn!";
+        }
+
+        response.PlayersPicking.AddRange(_playersPicking);
+        return Task.FromResult(response);
     }
 }

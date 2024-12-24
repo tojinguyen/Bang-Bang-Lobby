@@ -1,27 +1,34 @@
 syntax = "proto3";
 
-option csharp_namespace = "LobbyService";
+option csharp_namespace = "BangBangLobby";
 
-service Lobby {
-  rpc FindMatch (MatchRequest) returns (MatchResponse);
-  rpc SelectTank (TankRequest) returns (TankResponse);
-}
+import "google/protobuf/empty.proto";
 
-message MatchRequest {
+message JoinLobbyRequest {
   string playerName = 1;
 }
 
-message MatchResponse {
-  bool success = 1;
-  string message = 2;
+message JoinLobbyResponse {
+  string message = 1;
 }
 
-message TankRequest {
-  string playerName = 1;
-  string tankName = 2;
+message StartTankSelectionRequest {
+  string lobbyId = 1;
 }
 
-message TankResponse {
-  bool success = 1;
-  string message = 2;
+message TankSelectionRequest {
+  string playerId = 1;
+  string tankChoice = 2;
+}
+
+message TankSelectionResponse {
+  string message = 1;
+  bool isTurn = 2;
+  repeated string playersPicking = 3;
+}
+
+service LobbyService {
+  rpc JoinLobby (JoinLobbyRequest) returns (JoinLobbyResponse);
+  rpc StartTankSelection (StartTankSelectionRequest) returns (google.protobuf.Empty);
+  rpc SelectTank (TankSelectionRequest) returns (TankSelectionResponse);
 }
