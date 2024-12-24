@@ -1,0 +1,2 @@
+obj\Release\net8.0\Protos/Lobby.cs \
+obj\Release\net8.0\Protos/LobbyGrpc.cs: Protos/lobby.proto

@@ -12,6 +12,6 @@ var app = builder.Build();
 app.MapGrpcService<LobbyServiceImpl>();
 
 // Endpoint test (RESTful)
-app.MapGet("/", () => "Server gRPC đang chạy. Hãy dùng gRPC client để kết nối.");
+app.MapGet("/bang-bang-lobby", () => "Server gRPC đang chạy. Hãy dùng gRPC client để kết nối.");
 
 app.Run();
