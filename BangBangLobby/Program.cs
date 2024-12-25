@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Hosting;
 
 namespace BangBangLobby
@@ -18,7 +19,7 @@ namespace BangBangLobby
                         {
                             serverOptions.ListenLocalhost(5000, listenOptions =>
                             {
-                                listenOptions.UseHttps();  // Nếu muốn sử dụng HTTPS
+                                listenOptions.Protocols = HttpProtocols.Http2;
                             });
                         })
                         .UseStartup<Startup>();  // Chỉ định lớp Startup
