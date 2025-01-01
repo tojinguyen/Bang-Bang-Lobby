@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BangBangLobby")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a0ba301bd2d217de9ed6d2ed7fc9b2e7432c36c5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+304d7ede3700dfd240252cb4c1a0f25799a32110")]
 [assembly: System.Reflection.AssemblyProductAttribute("BangBangLobby")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BangBangLobby")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
